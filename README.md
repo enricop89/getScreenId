@@ -31,6 +31,18 @@ node server.js
 
 Nope open: `https://localhost:9001/`
 
+## Enable HTTPS in localhost
+
+You need an SSL certificate. In this case, you don't care about your certificate being trusted (you are in development environment), so you can just create a self-signed certificate 
+
+```shell
+cd getScreenId
+mkdir cert
+openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem
+mv cert.pem cert
+mv key.pem cert
+```
+
 # How to use?
 
 ```html
